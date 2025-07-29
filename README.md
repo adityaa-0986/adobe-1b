@@ -41,18 +41,3 @@ The project is designed to be run within a Docker container as per the hackathon
 ### Prerequisites
 * Docker must be installed and running.
 
-### 1. Build the Docker Image
-Navigate to the project's root directory in your terminal and run the following command to build the image:
-
-```bash
-docker build --platform linux/amd64 -t adobe-solution .
-```
-
-### 2. Run the Solution
-To run the solution, ensure you have an `input` folder (containing your PDFs and `input.json`) and an empty `output` folder in your project's root directory. Then, run the following command:
-
-```bash
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output --network none adobe-solution
-```
-
-The container will start, process the documents from `/app/input`, and place the resulting `output.json` file in your local `output` folder.
